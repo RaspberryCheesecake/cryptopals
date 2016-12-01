@@ -32,6 +32,11 @@ TEST_CASE("Hex representation in pair of char is correctly converted to single b
 }
 
 TEST_CASE("Hex represenation of series of char values is correctly converted to bytes") {
-	//const char* test_saying = 'deadbeef11';
+	// this is failing... but not for the right reason!
+	const char* const test_saying = "deadbeef12";
+	const uint8_t expected[] = {0xde, 0xead, 0xbe, 0xef, 0x12};
 	
+	int result = memcmp( HexCharMultiToBytes(test_saying), expected, sizeof(expected) );
+	
+    REQUIRE( result == 0 );
 }

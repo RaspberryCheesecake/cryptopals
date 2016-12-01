@@ -58,3 +58,8 @@ static uint8_t HexCharPairToBytes(const char* hex_char_pair) {
 	
 	return byte_value;
 }
+
+static uint8_t* HexCharMultiToBytes(const char* const hex_char) {
+	uint8_t* nonsense = 0x00;
+	return nonsense;
+}
